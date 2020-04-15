@@ -1,0 +1,146 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Challenges 19</title>
+</head>
+
+<body>
+    <h1 class="container">BREAD (Browse,Read,Edit,Add,Delete)</h1>
+    <h1 class="container">Filter</h1>
+    <div class="container">
+
+        <form method="GET">
+
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label">
+                    <input class="form-check-input" type="checkbox" id="defaultCheck1" name="Id"> ID
+                </label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" id="id" placeholder="ID">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label">
+                    <input class="form-check-input" type="checkbox" id="defaultCheck1" name="string"> String
+                </label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" id="string" placeholder="String">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label">
+                    <input class="form-check-input" type="checkbox" id="defaultCheck1"> Integer
+                </label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" placeholder="Integer">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label">
+                    <input class="form-check-input" type="checkbox" id="defaultCheck1"> Float
+                </label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" name="foat" placeholder="Float">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label">
+                    <input class="form-check-input" type="checkbox" id="defaultCheck1"> Date
+                </label>
+                <div class="col-sm-2">
+                    <input type="date" class="form-control" placeholder="Start Date">
+                </div>
+                <label class="col-sm-1 col-form-label">TO</label>
+                <div class="col-sm-2">
+                    <input type="date" class="form-control" placeholder="End Date">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label">
+                    <input class="form-check-input" type="checkbox" id="defaultCheck1"> Boolean
+                </label>
+                <div class="col-sm-7">
+                    <select class="form-control" id="exampleFormControlSelect1" placeholder="Choose the Boolean...">
+                        <option selected>Choose the Boolean...</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                </div>
+            </div>
+    </div>
+
+    <div class="container">
+        <div class="form-group row">
+            <div class="col-sm-7">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+        </form>
+    </div>
+
+    <table class="table table-striped container">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">String</th>
+                <th scope="col">Integer</th>
+                <th scope="col">Float</th>
+                <th scope="col">Date</th>
+                <th scope="col">Boolean</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% json.forEach((item, index) => {%>
+            <tr>
+                <th scope="row"><%= index + 1 %></th>
+                <td><%= item.string %></td>
+                <td><%= item.integer %></td>
+                <td><%= item.float %></td>
+                <td><%= item.date %></td>
+                <td><%= item.boolean %></td>
+                <td>
+                    <a href="/edit/<%= index %>"><button type="submit" class="btn btn-success btn-sm">Edit</button></a>
+                    <a href="/delete/<%= index %>"><button class="btn btn-danger btn-sm"
+                            type="submit">Delete</button></a>
+                </td>
+            </tr>
+            <%})%>
+        </tbody>
+    </table>
+    <nav aria-label="Page navigation example" class="container">
+        <ul class="pagination">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="form-group row">
+            <div class="col-sm-7">
+                <a href="/add" type="button" class="btn btn-primary">Add</a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>

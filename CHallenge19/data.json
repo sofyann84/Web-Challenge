@@ -1,0 +1,16 @@
+[
+   {
+      "string": "Testing Data",
+      "integer": "12",
+      "float": "1.45",
+      "date": "2017-12-12",
+      "boolean": "true"
+   },
+   {
+      "string": "coba lagi",
+      "integer": "99",
+      "float": "100.405",
+      "date": "2017-02-10",
+      "boolean": "false"
+   }
+]
